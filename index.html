@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Answering System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #answer {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ask a Question About Augmented Reality</h1>
+    
+    <form action="/ask" method="post">
+        <input type="text" name="question" placeholder="Enter your question here" required>
+        <input type="submit" value="Ask">
+    </form>
+
+    {% if answer %}
+        <div id="answer">
+            <h2>Answer:</h2>
+            <p>{{ answer }}</p>
+        </div>
+    {% endif %}
+</body>
+</html>
